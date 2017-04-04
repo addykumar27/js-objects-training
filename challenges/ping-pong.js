@@ -38,3 +38,60 @@
 */
 
 // YOUR CODE HERE
+function pingPong(table) {
+  var objectIndex = table.findIndex(function(el) {
+    return !!el;
+  });
+  var object = table[objectIndex];
+  
+  if (Math.floor(object.steps/(table.length-1)) % 2 === 0) {
+  
+    table[objectIndex + 1] = object;
+  } else {
+   
+    table[objectIndex - 1] = object;
+  }
+  object.steps += 1;
+  table[objectIndex] = null;
+  return table;
+}
+
+
+function pingPong(table, speed) {
+  var objectIndex = table.findIndex(function(el) {
+    return !!el;
+  });
+  var object = table[objectIndex];
+  for (var i=0; i<speed; i++) {
+    if (Math.floor(object.steps/(table.length-1)) % 2 === 0) {
+      table[objectIndex + 1] = object;
+    } else {
+      table[objectIndex - 1] = object;
+    }
+    object.steps += 1;
+    table[objectIndex] = null;
+  }
+  return table;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,4 +1,4 @@
-/*
+
 
   Create a function `letterCount` that accepts a string, and finds the number of times each letter
   occurs in the string. For example, given the word "apple", letterCount("apple") should count all
@@ -31,3 +31,19 @@
 */
 
 // YOUR CODE HERE
+    function letterCount(phrase) {
+  var arr = ['a','p','p','l','e'];
+  var objResult={}; 
+
+  var phraseArray = phrase.split("");
+  phraseArray.forEach (function(letter) {
+    if (objResult[letter]) {
+       objResult[letter] += 1;
+    } else {
+      objResult[letter] = 1;
+    }
+
+  });
+
+ return objResult;
+  }
